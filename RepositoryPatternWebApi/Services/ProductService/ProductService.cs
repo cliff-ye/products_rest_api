@@ -15,9 +15,6 @@ namespace RepositoryPatternWebApi.Services.ProductService
         {
         }
 
-        public Task<ActionResult<Product>> GetProductById(int id)
-        {
-            throw new NotImplementedException();
-        }
+       
     }
 }

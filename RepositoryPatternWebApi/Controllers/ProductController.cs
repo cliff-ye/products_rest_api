@@ -46,18 +46,14 @@ namespace RepositoryPatternWebApi.Controllers
             return products;
         }
 
-        //[HttpPut("{id:int}")]
-        //public async Task<IActionResult> UpdateProduct(int id, AddProductDto addProductDto)
-        //{
-        //    if(id == null || addProductDto == null)
-        //    {
-        //        return BadRequest();
-        //    }
+        [HttpPut("{id:int}")]
+        public async Task<IActionResult> UpdateProduct(int id, ProductDto productDto)
+        {
+            var product = CustMap.DtoToProduct(productDto);
+            await productRepo.Update(id, product);
 
-        //   await _productService.UpdateProduct(id, addProductDto);
-
-        //    return NoContent();
-        //}
+            return NoContent();
+        }
 
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteProduct(int id)

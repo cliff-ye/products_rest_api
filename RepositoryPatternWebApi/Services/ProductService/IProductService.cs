@@ -6,7 +6,7 @@ namespace RepositoryPatternWebApi.Services.ProductService
 {
     public interface IProductService 
     {
-        public Task<ActionResult<Product>> GetProductById(int id);
+       
        
     }
 }
